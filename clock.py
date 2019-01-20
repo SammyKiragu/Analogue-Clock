@@ -1,13 +1,15 @@
 import turtle
+import time
 
 wn = turtle.Screen()
 wn.bgcolor('#000')
 wn.title('Clock')
 wn.setup(width=600, height=600)
+wn.tracer(0)
 
 
 # classes
-class Clock(turtle.Turtle):
+class ClockOutline(turtle.Turtle):
     def __init__(self):
         turtle.Turtle.__init__(self)
         self.penup()
@@ -39,11 +41,72 @@ class Clock(turtle.Turtle):
             self.rt(30)
 
 
-# class instances
+class ClockHands(turtle.Turtle):
+    def __init__(self):
+        turtle.Turtle.__init__(self)
+        self.speed(0)
+        self.pensize(5)
+        self.penup()
+        self.hideturtle()
 
-# draw clock
-clock = Clock()
-clock.draw_clock()
-clock.draw_hours()
+    def draw_hour_hand(self, h):
+        self.penup()
+        self.setposition(0, 0)
+        self.color('#fff')
+        self.setheading(90)
+        angle = (h / 12) * 360
+        self.rt(angle)
+        self.pendown()
+        self.fd(100)
+
+    def draw_minute_hand(self, m):
+        self.penup()
+        self.setposition(0, 0)
+        self.color('#006666')
+        self.setheading(90)
+        angle = (m / 60) * 360
+        self.rt(angle)
+        self.pendown()
+        self.fd(175)
+
+    def draw_seconds_hand(self, s):
+        self.penup()
+        self.setposition(0, 0)
+        self.color('#006633')
+        self.setheading(90)
+        angle = (s / 60) * 360
+        self.rt(angle)
+        self.pendown()
+        self.fd(125)
+
+
+
+class Time:
+    def __init__(self):
+        self.hour = time.localtime().tm_hour
+        self.minute = time.localtime().tm_min
+        self.second = time.localtime().tm_sec
+
+    def print_time(self):
+        print(self.hour)
+
+
+# class instances
+clock_outline = ClockOutline()
+clock_hands = ClockHands()
+
+# draw clock outline
+clock_outline.draw_clock()
+clock_outline.draw_hours()
+
 # main loop
-wn.mainloop()
+while True:
+    # class instances
+    currentTime = Time()
+    # draw clock hands
+    clock_hands.draw_hour_hand(currentTime.hour)
+    clock_hands.draw_minute_hand(currentTime.minute)
+    clock_hands.draw_seconds_hand(currentTime.second)
+    wn.update()
+    time.sleep(1)
+    clock_hands.clear()
