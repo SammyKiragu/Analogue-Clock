@@ -6,7 +6,7 @@ Analogue Clock built using Python
 
 ![Clock](https://user-images.githubusercontent.com/39765499/51446043-36531500-1d04-11e9-8b88-0dbc82ea11aa.gif)
 
-<img width="602" alt="screenshot 2019-01-20 at 22 31 27" src="https://user-images.githubusercontent.com/39765499/51446044-381cd880-1d04-11e9-8172-a46f0fd8f88b.png">
+<img width="599" alt="screenshot 2019-01-20 at 22 41 01" src="https://user-images.githubusercontent.com/39765499/51446061-7e723780-1d04-11e9-8f46-b96f9e984fb7.png">
 
 ### Future Plans
 
