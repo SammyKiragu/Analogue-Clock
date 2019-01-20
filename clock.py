@@ -1,6 +1,7 @@
 import turtle
 import time
 
+# setup
 wn = turtle.Screen()
 wn.bgcolor('#000')
 wn.title('Clock')
@@ -80,7 +81,6 @@ class ClockHands(turtle.Turtle):
         self.fd(125)
 
 
-
 class Time:
     def __init__(self):
         self.hour = time.localtime().tm_hour
@@ -108,5 +108,4 @@ while True:
     clock_hands.draw_minute_hand(currentTime.minute)
     clock_hands.draw_seconds_hand(currentTime.second)
     wn.update()
-    time.sleep(1)
     clock_hands.clear()
