@@ -20,7 +20,7 @@ class ClockOutline(turtle.Turtle):
         self.pensize(5)
 
     # draw outline for clock face
-    def draw_clock(self):
+    def draw_frame(self):
         self.penup()
         self.setposition(0, 210)
         self.pendown()
@@ -116,8 +116,9 @@ class Time:
 clock_outline = ClockOutline()
 clock_hands = ClockHands()
 digital_time = DigitalTime()
+
 # draw clock outline
-clock_outline.draw_clock()
+clock_outline.draw_frame()
 clock_outline.draw_hours()
 
 # main loop
