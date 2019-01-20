@@ -1,2 +1,3 @@
-# Analog-Clock
-Analog Clock built using Python
+# Analogue Clock
+
+Analogue Clock built using Python
